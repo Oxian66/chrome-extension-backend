@@ -31,6 +31,10 @@ export class Comment {
   @Prop()
   @Field(() => [Review], { nullable: true })
   reviews?: Review[];
+
+  @Prop()
+  @Field()
+  location: '';
 }
 
 export const CommentSchema = SchemaFactory.createForClass(Comment);

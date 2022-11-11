@@ -13,6 +13,7 @@ type Comment {
   time: DateTime!
   username: String!
   reviews: [Review!]
+  location: String!
 }
 
 """

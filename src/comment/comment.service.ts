@@ -21,15 +21,17 @@ export class CommentService {
       throw new ConflictException(
         'The user has already made a such comment for that site!',
       );
-    return await this.commentModel.create(createCommentInput);
+    return this.commentModel.create(createCommentInput);
   }
 
   async findCommentsByPage(location: string) {
-    return await this.commentModel.find({ location });
+    const res = await this.commentModel.find({ location });
+    console.log(res);
+    return res; // this.commentModel.find({ location });
   }
 
   async createReaction(id: string, updateCommentInput: UpdateCommentInput) {
-    return await this.commentModel.findByIdAndUpdate(id, updateCommentInput);
+    return this.commentModel.findByIdAndUpdate(id, updateCommentInput);
   }
 
   // findAll() {
