@@ -1,0 +1,46 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Review {
+  isLiked: Boolean
+  location: String!
+  username: String!
+}
+
+type Comment {
+  text: String!
+  time: DateTime!
+  username: String!
+  reviews: [Review!]
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  getReview(location: String!): Review!
+  getComments(location: String!): [Comment!]!
+}
+
+type Mutation {
+  createReview(createReviewInput: CreateReviewInput!): Review!
+  createComment(commentText: CreateCommentInput!): Comment!
+}
+
+input CreateReviewInput {
+  time: DateTime!
+  location: String!
+  likes: Int!
+  username: String!
+  comment: String
+}
+
+input CreateCommentInput {
+  username: String!
+  text: String!
+  location: String!
+  time: DateTime!
+}
