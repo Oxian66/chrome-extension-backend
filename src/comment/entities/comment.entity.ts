@@ -34,7 +34,7 @@ export class Comment {
 
   @Prop()
   @Field()
-  location: '';
+  location: string;
 }
 
 export const CommentSchema = SchemaFactory.createForClass(Comment);

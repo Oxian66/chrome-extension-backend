@@ -33,23 +33,15 @@ export class CommentService {
     return res; // this.commentModel.find({ location });
   }
 
-  async createReaction(id: string, updateCommentInput: UpdateCommentInput) {
-    return this.commentModel.findByIdAndUpdate(id, updateCommentInput);
+  async createReaction(_id: string, updateCommentInput: UpdateCommentInput) {
+    return this.commentModel.findByIdAndUpdate(_id, updateCommentInput);
   }
-
-  // findAll() {
-  //   return `This action returns all comment`;
-  // }
-
-  // findOne(id: number) {
-  //   return `This action returns a #${id} comment`;
-  // }
 
   // update(id: number, updateCommentInput: UpdateCommentInput) {
   //   return `This action updates a #${id} comment`;
   // }
 
-  // remove(id: number) {
-  //   return `This action removes a #${id} comment`;
-  // }
+  remove(_id: string) {
+    return this.commentModel.findByIdAndDelete(_id);
+  }
 }

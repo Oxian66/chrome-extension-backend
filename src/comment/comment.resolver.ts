@@ -41,13 +41,20 @@ export class CommentResolver {
   // }
 
   @Query((returns) => [Comment])
-  async getComments(@Args('location') location: string) {
+  getComments(@Args('location') location: string) {
     return this.commentService.findCommentsByPage(location);
   }
+
   @Mutation(() => Comment)
-  async createComment(
-    @Args('commentText') createCommentDto: CreateCommentInput,
+  createComment(@Args('commentText') createCommentDto: CreateCommentInput) {
+    return this.commentService.createComment(createCommentDto);
+  }
+
+  @Mutation(() => Comment)
+  createReaction(
+    @Args('reaction') _id: string,
+    updateComentDto: UpdateCommentInput,
   ) {
-    return await this.commentService.createComment(createCommentDto);
+    return this.commentService.createReaction(_id, updateComentDto);
   }
 }

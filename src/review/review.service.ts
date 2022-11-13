@@ -37,7 +37,7 @@ export class ReviewService {
     const find = await this.reviewModel.find({
       username: createReviewDto.username,
       location: createReviewDto.location,
-      comments: createReviewDto.comment,
+      isLiked: createReviewDto.isLiked,
     });
     if (find.length > 0)
       throw new ConflictException(
