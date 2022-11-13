@@ -13,4 +13,7 @@ export class CreateCommentInput {
 
   @Field()
   time: Date;
+
+  @Field()
+  isLiked?: boolean;
 }

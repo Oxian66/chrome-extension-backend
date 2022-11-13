@@ -44,4 +44,5 @@ input CreateCommentInput {
   text: String!
   location: String!
   time: DateTime!
+  isLiked: Boolean!
 }

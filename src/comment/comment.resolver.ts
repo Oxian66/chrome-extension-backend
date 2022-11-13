@@ -15,7 +15,7 @@ export class CommentResolver {
   //   return this.commentService.create(createCommentInput);
   // }
 
-  // @Query(() => [Comment], { name: 'comment' })
+  // @Query(() => [Comment])
   // findAll() {
   //   return this.commentService.findAll();
   // }

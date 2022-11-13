@@ -16,7 +16,10 @@ export class CommentService {
       username: createCommentInput.username,
       text: createCommentInput.text,
       location: createCommentInput.location,
+      isLiked: createCommentInput.isLiked,
+      time: createCommentInput.time,
     });
+    //if (find.filter((i) => i.username === createCommentInput.username))
     if (find.length > 0)
       throw new ConflictException(
         'The user has already made a such comment for that site!',
